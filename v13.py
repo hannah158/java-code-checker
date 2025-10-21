@@ -316,7 +316,7 @@ def extract_error_types(error_desc):
     if not error_desc or error_desc == "无":
         return []
     error_keywords = {
-        "数组越界": ["数组越界", "索引超出", "ArrayIndexOutOfBounds"],
+        "数组越界": ["数组越界", "索引超出", "ArrayIndexOutOfBounds", "数组索引越界", "超出数组长度", "索引无效"],
         "缺少分号": ["缺少分号", "语句结尾无分号"],
         "关键字大小写错误": ["关键字大小写", "INT", "Public", "If"],
         "数组初始化格式错误": ["数组初始化", "new int[3]{", "int[] arr[]"],
@@ -473,4 +473,5 @@ if st.sidebar.button("生成反馈", type="primary"):
             st.markdown(ERROR_KNOWLEDGE[error_type]["内容"], unsafe_allow_html=True)
     else:
         st.markdown('<div class="diagnosis">代码无明显错误，可尝试学习Java基础语法哦～</div>', unsafe_allow_html=True)
+
     st.markdown('</div>', unsafe_allow_html=True)
